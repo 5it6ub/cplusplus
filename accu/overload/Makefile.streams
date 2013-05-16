@@ -5,12 +5,11 @@
 # The predefined macro "$<" expands to the full filename of the .cpp file.
 
 COMPILE = g++ -c
-FILENAME = c++_templates
 
-test: $(FILENAME).o
-	g++ -o test $(FILENAME).o
+test: c++_streams.o
+	g++ -o test c++_streams.o
 .cpp.o:
 	$(COMPILE) $<
 clean:
-	rm test $(FILENAME).o
+	rm test c++_streams.o
 
