@@ -1,0 +1,16 @@
+# Makefile template
+# $(COMPILE) -> macro definition
+# act as a rule for any .o file listed as a source in the "test" rule, and 
+# makes each .o file dependent on a file of the same name with a .cpp extension.
+# The predefined macro "$<" expands to the full filename of the .cpp file.
+
+COMPILE = g++ -c
+FILENAME = c++_friend
+
+test: $(FILENAME).o
+	g++ -o test $(FILENAME).o
+.cpp.o:
+	$(COMPILE) $<
+clean:
+	rm test $(FILENAME).o
+
