@@ -5,7 +5,7 @@
 # The predefined macro "$<" expands to the full filename of the .cpp file.
 
 COMPILE = g++ -c
-FILENAME = c++_templates
+FILENAME = c++_mem_alloc
 
 test: $(FILENAME).o
 	g++ -o test $(FILENAME).o
